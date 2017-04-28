@@ -1,7 +1,6 @@
-# Simple LOG
+# Honeywell Lyric
 
-This app makes it possible to add some logging to your flow's.
-It is simple in every way. it's simple to use and it's simple in terms of code. The donation button below contains more code then the app itself.
+This app makes the Honeywell lyric smart thermostat a little bit smarter ;-)
 
 
 You may leave me a donation if you love my work.
@@ -14,16 +13,6 @@ You may leave me a donation if you love my work.
 </form> 
 
 
-## Version 0.0.4
+## Version 0.0.1
 
-* Repaired the clear button.
-* Added a download button.
-* Added action card to clear log data.
-
-
-## Features
-
-* Use the log activity card, and add some text to the log.
-* Clear your log.
-* View your log in the app settings.
-* the log view will refresh when a new line of text is added to the log.
+* Basic thermostat features.
