@@ -5,7 +5,7 @@
 		"nl": "Honeywell Lyric Thermostaat"
 	},
     "description": { "en": "Honeywell app to support the Lyric Thermostat", "nl": "Honeywell app voor de Lyric Thermostaat" },
-    "category": "Climate",
+    "category": "climate",
     "images": { "large": "assets/images/large.png", "small": "assets/images/small.png" },
 	"version": "0.0.1",
 	"compatibility": "1.x",
