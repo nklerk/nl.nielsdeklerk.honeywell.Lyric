@@ -1,0 +1,16 @@
+{
+	"pair": {
+		"start": {
+			"title": "Retrieving devices...",
+			"error": "An error has occurred.",
+			"notauthorized": "The set credentials are not correct.",
+			"required": "Username and password are required values."
+		}
+	},
+	"auth": {
+		"intro": "Please provide your login credentials. These are the same as the portal.",
+		"save": "Continue",
+		"username": "Username",
+		"password": "Password"
+	}
+}

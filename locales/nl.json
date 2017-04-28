@@ -1,0 +1,16 @@
+{
+	"pair": {
+		"start": {
+			"title": "Apparaten opzoeken...",
+			"error": "Er is een fout opgetreden.",
+			"notauthorized": "De opgegeven inloggegevens zijn niet correct.",
+			"required": "Gebruikersnaam en wachtwoord zijn verplicht."
+		}
+	},
+	"auth": {
+		"intro": "Geef uw inloggegevens op. Deze zijn identiek aan de gegevens voor het portaal.",
+		"save": "Doorgaan",
+		"username": "Gebruikersnaam",
+		"password": "Wachtwoord"
+	}
+}
