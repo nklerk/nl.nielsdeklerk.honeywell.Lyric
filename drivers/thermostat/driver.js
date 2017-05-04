@@ -180,7 +180,6 @@ function honeywell_devices_update_data (){
 	if (devices){
 		for (var i in devices){
 			devices[i].updated = (new Date());
-			//console.log (devices[i].data.deviceID, devices[i].data.locationID);
 			honeywell_get_API_data(devices[i].data.deviceID, devices[i].data.locationID, function(api_data){
 				if (api_data.code && api_data.code === 401) {
 					honeywell_refresh_API_token(function(status){
@@ -218,7 +217,11 @@ function honeywell_get_API_data (deviceID, locationID, callback) {
 		headers: {'Authorization': 'Bearer ' + Homey.manager('settings').get('access_token'), 'Accept': 'application/json'}
 	}, function( err, response, device_data ){
 		console.log(" Got a response from Honeywell API.");
-		var _device_data = JSON.parse(device_data);
+		try {
+			var _device_data = JSON.parse(device_data);
+		} catch (err){
+			console.log('[API ERROR]', err);
+		}	
 		callback(_device_data);
 	});
 }

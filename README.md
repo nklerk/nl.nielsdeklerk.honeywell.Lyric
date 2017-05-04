@@ -13,6 +13,9 @@ You may leave me a donation if you love my work.
 </form> 
 
 
+## Version 0.0.2
+* Fixed a bug that could crash the driver.
+
 ## Version 0.0.1
 
 * Basic thermostat features.
