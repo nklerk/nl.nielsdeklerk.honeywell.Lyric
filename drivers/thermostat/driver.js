@@ -187,19 +187,26 @@ function honeywell_devices_update_data (){
 					});
 				} else if (typeof api_data.changeableValues !== 'undefined' && typeof api_data.changeableValues.heatSetpoint !== 'undefined' && typeof api_data.indoorTemperature !== 'undefined' && typeof api_data.changeableValues.heatCoolMode !== 'undefined') {
 					console.log (' + Received new data for ' + devices[i].name + '(' + devices[i].data.deviceID + ')');
-
 					console.log ('   - Heat Setpoint:    ' + api_data.changeableValues.heatSetpoint + ' °C');
 					console.log ('   - Room Temperature: ' + api_data.indoorTemperature + ' °C');
 					console.log ('   - Mode:             ' + api_data.changeableValues.heatCoolMode);
+					console.log ('   - Outdoor Temp:     ' + api_data.outdoorTemperature + ' °C');
 					console.log ('');
+
+					console.log('===============================');
+					console.log(JSON.stringify(api_data));
+					console.log('===============================');
 
 					if (devices[i].target_temperature  !== api_data.changeableValues.heatSetpoint) {module.exports.realtime( devices[i].data, 'target_temperature',     api_data.changeableValues.heatSetpoint);};
 					if (devices[i].measure_temperature !== api_data.indoorTemperature)             {module.exports.realtime( devices[i].data, 'measure_temperature',    api_data.indoorTemperature);};
 					if (devices[i].thermostat_mode     !== api_data.changeableValues.heatCoolMode) {module.exports.realtime( devices[i].data, 'thermostat_mode',        api_data.changeableValues.heatCoolMode);};
-
+					if (devices[i].outdoorTemperature  !== api_data.outdoorTemperature)            {Homey.manager('flow').triggerDevice('outside_temp_change', {device: devices[i].data.deviceID, temp: api_data.outdoorTemperature});};
+					
 					devices[i].target_temperature 	= 	api_data.changeableValues.heatSetpoint;
 					devices[i].measure_temperature 	= 	api_data.indoorTemperature;
 					devices[i].thermostat_mode 		= 	api_data.changeableValues.heatCoolMode;
+					devices[i].outdoorTemperature 	= 	api_data.outdoorTemperature;
+					
 					Homey.manager('settings').set('thermostats', devices);
 				} else {
 					console.log ('ERROR! Something went wrong. expected new device values but got:');

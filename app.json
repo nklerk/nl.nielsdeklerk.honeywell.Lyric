@@ -42,6 +42,38 @@
 			]
 		}
 	],
+	"flow": {
+	    "triggers": [
+			{
+		    	"id": "outside_temp_change",
+				"title": {
+					"en": "Outside temperature",
+					"nl": "Buiten temperatuur"
+				},
+	            "args": [
+	              	{
+						"name": "device",
+						"type": "device",
+						"placeholder": {
+							"en": "Select Thermostat",
+							"nl": "Selecteer Thermostaat"
+	                	},
+	            		"filter": "driver_id=thermostat"
+	            	}
+	            ],
+				"tokens": [
+					{
+						"name": "temp",
+						"title": {
+							"en": "Temperature",
+							"nl": "Temperatuur"
+						},
+						"type": "number"
+					}
+				]
+			}
+		]
+	},
 	"dependencies": {
 		"request": "*",
 		"extend": "*"
